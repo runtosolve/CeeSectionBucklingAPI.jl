@@ -1,6 +1,6 @@
 module CeeSectionBucklingAPI
 
-using JSON 
+using JSON, CeeSectionBuckling
 
 struct Inputs
 
