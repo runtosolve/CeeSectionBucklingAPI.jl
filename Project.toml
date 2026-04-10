@@ -6,6 +6,7 @@ authors = ["Cris Moen <cris.moen@runtosolve.com>"]
 [deps]
 AISIS100 = "01f7396e-a581-4110-84fa-e8964400bef8"
 CUFSM = "82b4978f-06ae-48e0-88e8-a26b4f7a0fa1"
+CUFSMModalGeometry = "82fbcf34-b322-4c20-ba17-babb40f2cc8c"
 CeeSectionBuckling = "58e103f9-c1dd-473d-8fd2-46aa5cb27d98"
 CrossSectionGeometry = "e5713cf4-1a83-4860-95bf-b82253e75fb4"
 JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
@@ -14,6 +15,7 @@ LinesCurvesNodes = "74a74c3a-221d-4cd1-a4eb-c3c8149e7592"
 [compat]
 AISIS100 = "0.1.0"
 CUFSM = "0.1.0"
+CUFSMModalGeometry = "0.1.0"
 CeeSectionBuckling = "0.1.0"
 CrossSectionGeometry = "0.1.0"
 JSON = "1.4.0"
