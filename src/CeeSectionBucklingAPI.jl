@@ -14,6 +14,8 @@ struct Inputs
     H   #web
     r   #inside radius 
 
+    mode_shape_element_discretization
+
 end
 
 
@@ -39,6 +41,8 @@ function perform_calculation(inputs_path, serial_path)
     H = inputs.H 
     r = inputs.r 
 
+    element_discretization = inputs.mode_shape_element_discretization
+
 
     material = CeeSectionBuckling.Material(E, ν)
     dimensions = CeeSectionBuckling.Dimensions(t, L, B, H, r)
@@ -52,7 +56,7 @@ function perform_calculation(inputs_path, serial_path)
 
     model = all_results[1].results.model
     eig = 1
-    element_discretization = 5
+    # element_discretization = 5
     deformation_scale = [0.5, 0.5]
     t_elements = model.elem[:, 4]
     local_buckling_mode_shape = CUFSMModalGeometry.get_mode_shape_coordinates(model, eig, t_elements, element_discretization, deformation_scale)
