@@ -25,6 +25,7 @@ struct Outputs
     Pcrd 
     local_buckling_mode_shape 
     distortional_buckling_mode_shape
+    section_properties
 
 end
 
@@ -42,6 +43,12 @@ function perform_calculation(inputs_path, serial_path)
     r = inputs.r 
 
     element_discretization = inputs.mode_shape_element_discretization
+
+    dimensions =  CeeSectionBuckling.Dimensions(t, L, B, H, r) 
+
+    coordinates = CeeSectionBuckling.get_section_coordinates(dimensions)
+
+    section_properties = CeeSectionBuckling.calculate_section_properties(coordinates, t)
 
 
     material = CeeSectionBuckling.Material(E, ν)
@@ -64,14 +71,15 @@ function perform_calculation(inputs_path, serial_path)
 
      model = all_results[2].results.model
     eig = 1
-    element_discretization = 5
+    # element_discretization = 5
     deformation_scale = [0.5, 0.5]
     t_elements = model.elem[:, 4]
     distortional_buckling_mode_shape = CUFSMModalGeometry.get_mode_shape_coordinates(model, eig, t_elements, element_discretization, deformation_scale)
     # distortional_buckling_mode_shape = (X=X, Y=Y)
 
+    
 
-    outputs = Outputs(all_results[1].results.Rcr, all_results[2].results.Rcr, local_buckling_mode_shape, distortional_buckling_mode_shape)
+    outputs = Outputs(all_results[1].results.Rcr, all_results[2].results.Rcr, local_buckling_mode_shape, distortional_buckling_mode_shape, section_properties)
 
     open(serial_path, "w") do f
         JSON.json(f, outputs)

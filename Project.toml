@@ -11,6 +11,7 @@ CeeSectionBuckling = "58e103f9-c1dd-473d-8fd2-46aa5cb27d98"
 CrossSectionGeometry = "e5713cf4-1a83-4860-95bf-b82253e75fb4"
 JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 LinesCurvesNodes = "74a74c3a-221d-4cd1-a4eb-c3c8149e7592"
+SectionProperties = "03320fb2-42b0-43fd-9b66-b95dbaa39193"
 
 [compat]
 AISIS100 = "0.1.0"
@@ -20,3 +21,4 @@ CeeSectionBuckling = "0.1.0"
 CrossSectionGeometry = "0.1.0"
 JSON = "1.4.0"
 LinesCurvesNodes = "0.1.0"
+SectionProperties = "0.1.0"
